@@ -2,12 +2,18 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>博客管理后台</title>
-  <!-- 引入 Netlify CMS 样式 -->
-  <link rel="stylesheet" href="https://unpkg.com/netlify-cms@^2.15.62/dist/netlify-cms.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netlify CMS</title>
+  <link rel="stylesheet" href="https://unpkg.com/netlify-cms/dist/cms.css">
 </head>
 <body>
-  <!-- CMS 容器 -->
-  <script src="https://unpkg.com/netlify-cms@^2.15.62/dist/netlify-cms.min.js"></script>
+  <div id="nc-root"></div>
+  <script src="https://unpkg.com/netlify-cms/dist/netlify-cms.js"></script>
+  <script>
+    // Ensure that CMS is initialized when the page loads
+    if (typeof CMS !== "undefined") {
+      CMS.init();
+    }
+  </script>
 </body>
 </html>
