@@ -57,8 +57,8 @@ social:
 favicon: /img/favicon.png
 
 avatar:
-  img: /img/butterfly-icon.png
-  effect: false
+  img: /img/avatar.jpg
+  effect: true
 
 # Disable all banner images
 disable_top_img: false
@@ -285,7 +285,9 @@ aside:
     category: true
   card_author:
     enable: true
-    description:  一个喜欢在游戏里游荡的幽灵
+    description: |
+      Gong_J
+      一个喜欢在游戏里游荡的幽灵
     button:
       enable: true
       icon: fab fa-github
