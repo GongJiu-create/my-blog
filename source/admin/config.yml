@@ -1,20 +1,27 @@
 backend:
-  name: github
-  repo: GongJiu-create/my-blog   # 例如: GongJiu-create/my-blog
-  branch: main                         # 保持和你的主要分支保持一致
+  name: git-gateway
+  branch: main  # 你的网站使用的 Git 分支
 
-media_folder: source/images             # 图片会上传到 source/images
-public_folder: /images                  # 访问图片时的路径
+media_folder: "source/images/uploads"  # 上传的媒体文件存放位置
+public_folder: "/images/uploads"  # 媒体文件的公开路径
 
 collections:
-  - name: "posts"
-    label: "Posts"
-    folder: "source/_posts"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+  - name: "posts"  # 文章集合名称
+    label: "文章"
+    folder: "_posts"  # Hexo 默认的文章存放目录
+    create: true  # 允许创建新文章
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"  # 文章的 URL 格式
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
-      - { label: "Cover Image", name: "cover", widget: "image", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "日期", name: "date", widget: "datetime" }
+      - { label: "内容", name: "body", widget: "markdown" }
+      - { label: "封面图", name: "cover", widget: "image" }
+
+  - name: "pages"  # 页面集合
+    label: "页面"
+    folder: "source/_pages"  # 页面存放目录
+    create: true  # 允许创建新页面
+    slug: "{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "内容", name: "body", widget: "markdown" }
